@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+.env
+*.log
+.DS_Store
+server/uploads/photos/*
+!server/uploads/photos/.gitkeep
+server/uploads/payslips/*
+!server/uploads/payslips/.gitkeep
