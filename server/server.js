@@ -1,4 +1,8 @@
-require('dotenv').config();
+// override:true makes the values in server/.env always win, even if a
+// same-named environment variable (e.g. MONGO_URI) already exists at the
+// OS level — otherwise dotenv silently keeps the pre-existing value and
+// edits to .env appear to have no effect.
+require('dotenv').config({ override: true });
 const app = require('./app');
 const connectDB = require('./config/db');
 

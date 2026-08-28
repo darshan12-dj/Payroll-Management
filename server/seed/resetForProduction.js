@@ -18,7 +18,11 @@
  * sent anywhere else. Pick something you wouldn't mind rotating later
  * from Settings > My Account > Change Password.
  */
-require('dotenv').config();
+// override:true makes the values in server/.env always win, even if a
+// same-named environment variable (e.g. MONGO_URI) already exists at the
+// OS level — otherwise dotenv silently keeps the pre-existing value and
+// edits to .env appear to have no effect.
+require('dotenv').config({ override: true });
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
