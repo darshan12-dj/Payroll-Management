@@ -7,12 +7,6 @@ import { Label, Input, FormGroup, FieldError } from '../../components/ui/FormFie
 import Button from '../../components/ui/Button';
 import { useAuth } from '../../context/AuthContext';
 
-const DEMO_ACCOUNTS = [
-  { role: 'Admin', email: 'admin@northbridge-tech.com', password: 'Admin@12345' },
-  { role: 'Payroll Manager', email: 'payroll.manager@northbridge-tech.com', password: 'Payroll@12345' },
-  { role: 'Employee', email: 'employee@northbridge-tech.com', password: 'Employee@12345' },
-];
-
 export default function Login() {
   const { user, login } = useAuth();
   const [email, setEmail] = useState('');
@@ -47,12 +41,6 @@ export default function Login() {
     } else {
       toast.error(result.message);
     }
-  };
-
-  const fillDemo = (acc) => {
-    setEmail(acc.email);
-    setPassword(acc.password);
-    setErrors({});
   };
 
   return (
@@ -99,23 +87,6 @@ export default function Login() {
           Sign in
         </Button>
       </form>
-
-      <div className="mt-6 border-t border-gray-100 pt-5">
-        <p className="mb-2 text-center text-xs font-medium uppercase tracking-wide text-gray-400">Demo accounts</p>
-        <div className="grid grid-cols-1 gap-2">
-          {DEMO_ACCOUNTS.map((acc) => (
-            <button
-              key={acc.email}
-              onClick={() => fillDemo(acc)}
-              type="button"
-              className="flex items-center justify-between rounded-lg border border-gray-200 px-3 py-2 text-left text-xs hover:border-brand-300 hover:bg-brand-50/40"
-            >
-              <span className="font-medium text-gray-700">{acc.role}</span>
-              <span className="text-gray-400">{acc.email}</span>
-            </button>
-          ))}
-        </div>
-      </div>
     </AuthLayout>
   );
 }

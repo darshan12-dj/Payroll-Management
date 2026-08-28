@@ -9,7 +9,6 @@ import ForgotPassword from './pages/auth/ForgotPassword';
 import ResetPassword from './pages/auth/ResetPassword';
 import Unauthorized from './pages/auth/Unauthorized';
 import NotFound from './pages/NotFound';
-
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/employees/Employees';
 import EmployeeForm from './pages/employees/EmployeeForm';
